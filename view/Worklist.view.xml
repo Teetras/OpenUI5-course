@@ -1,0 +1,81 @@
+<mvc:View
+    controllerName="project1.project1.controller.Worklist"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic"
+>
+    <Page showHeader="false">
+        <Table
+            id="table"
+            width="auto"
+            items="{
+                path: '/zjblessons_base_Headers',
+                sorter: {
+                    path: 'DocumentDate',
+                    descending: true
+                }
+            }"
+            growing="true"
+            growingThreshold="15"
+            growingScrollToLoad="true"
+        >
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="{i18n>tableTitle}" />
+                    <ToolbarSpacer />
+                    <SearchField
+                        placeholder="{i18n>searchPlaceholder}"
+                        liveChange="onSearchDocNumber"
+                        width="auto"
+                    />
+                    <SearchField
+                        placeholder="{i18n>plantSearchPlaceholder}"
+                        liveChange="onSearchPlantText"
+                        width="auto"
+                    />
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column>
+                    <Text text="{i18n>documentNumber}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>documentDate}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>plantText}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>regionText}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>description}" />
+                </Column>
+                <Column>
+                    <Text text="{i18n>created}" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem
+                    type="Navigation"
+                    press="onPress"
+                >
+                    <cells>
+                        <ObjectIdentifier text="{DocumentNumber}" />
+                        <ObjectIdentifier text="{
+                            path: 'DocumentDate',
+                            formatter: '.formatter.formatDate'
+                        }" />
+                        <ObjectIdentifier text="{PlantText}" />
+                        <ObjectIdentifier text="{RegionText}" />
+                        <ObjectIdentifier text="{Description}" />
+                        <ObjectIdentifier text="{
+                            path: 'Created',
+                            formatter: '.formatter.formatCreated'
+                        }" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
