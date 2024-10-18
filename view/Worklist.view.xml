@@ -8,13 +8,7 @@
         <Table
             id="table"
             width="auto"
-            items="{
-                path: '/zjblessons_base_Headers',
-                sorter: {
-                    path: 'DocumentDate',
-                    descending: true
-                }
-            }"
+
             growing="true"
             growingThreshold="15"
             growingScrollToLoad="true"
@@ -22,6 +16,7 @@
             <headerToolbar>
                 <Toolbar>
                     <Title text="{i18n>tableTitle}" />
+                    <Title id="idTableHeader" text="{=${worklistView>/count}}"/>
                     <ToolbarSpacer />
                     <SearchField
                         placeholder="{i18n>searchPlaceholder}"
@@ -55,27 +50,7 @@
                     <Text text="{i18n>created}" />
                 </Column>
             </columns>
-            <items>
-                <ColumnListItem
-                    type="Navigation"
-                    press="onPress"
-                >
-                    <cells>
-                        <ObjectIdentifier text="{DocumentNumber}" />
-                        <ObjectIdentifier text="{
-                            path: 'DocumentDate',
-                            formatter: '.formatter.formatDate'
-                        }" />
-                        <ObjectIdentifier text="{PlantText}" />
-                        <ObjectIdentifier text="{RegionText}" />
-                        <ObjectIdentifier text="{Description}" />
-                        <ObjectIdentifier text="{
-                            path: 'Created',
-                            formatter: '.formatter.formatCreated'
-                        }" />
-                    </cells>
-                </ColumnListItem>
-            </items>
+      
         </Table>
     </Page>
 </mvc:View>
