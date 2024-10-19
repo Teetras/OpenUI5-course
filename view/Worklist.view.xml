@@ -8,7 +8,6 @@
         <Table
             id="table"
             width="auto"
-
             growing="true"
             growingThreshold="15"
             growingScrollToLoad="true"
@@ -18,6 +17,11 @@
                     <Title text="{i18n>tableTitle}" />
                     <Title id="idTableHeader" text="{=${worklistView>/count}}"/>
                     <ToolbarSpacer />
+                    <Button
+                        icon="{i18n>iconCreate}"
+                        type="Transparent"
+                        press="onPressCreateDialog" 
+                    />
                     <SearchField
                         placeholder="{i18n>searchPlaceholder}"
                         liveChange="onSearchDocNumber"
@@ -49,8 +53,9 @@
                 <Column>
                     <Text text="{i18n>created}" />
                 </Column>
+                <Column width="5%"></Column>
             </columns>
-      
         </Table>
+
     </Page>
 </mvc:View>
