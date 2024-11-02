@@ -11,7 +11,9 @@ sap.ui.define(
 
     return BaseController.extend("project1.project1.controller.Worklist", {
       formatter: formatter,
-
+Ofunction: function(){
+  return console.log("master branch")
+},
       onInit: function () {
         const oViewModel = new JSONModel({});
         this.setModel(oViewModel, "worklistView");

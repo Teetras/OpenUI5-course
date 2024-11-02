@@ -1,0 +1,55 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+>
+    <Dialog
+        title="Create"
+        class="sapUiContentPadding"
+        beforeOpen="onDialogBeforeOpen"
+         >
+        <content>
+            <VBox width="100%">
+                <VBox>
+                    <Label labelFor='idHeaderID' text="Header ID"/>
+                    <Input value="{HeaderID}" id='idHeaderID' required="true" />
+                </VBox>
+                <VBox>
+                    <Label labelFor='idDocumentNumber' text="Document Number"/>
+                    <Input value="{DocumentNumber}" id='idDocumentNumber'  />
+                </VBox>
+                <VBox>
+                    <Label labelFor='idPlantID' text="Plant ID"/>
+                    <Input value="{PlantID}" id='idPlantID'  />
+                </VBox>
+                <VBox>
+                    <Label labelFor='idPlantText' text="Plant Text"/>
+                    <Input value="{PlantText}" id='idPlantText' />
+                </VBox>
+                <VBox>
+                    <Label labelFor='idDescription' text="Description"/>
+                    <TextArea rows="3" maxLength="256" value="{Description}" id='idDescription'/>
+                </VBox>
+                <VBox>
+                    <Label labelFor='idRegionText' text="Region Text"/>
+                    <Input value="{RegionText}" id='idRegionText'  />
+                </VBox>
+                <VBox>
+                    <Label labelFor='idDocumentDate' text="Document Date"/>
+                    <DatePicker
+                        id='idDocumentDate'
+                        value="{path: 'DocumentDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'yyyy-MM-dd' }}"
+                        displayFormat="yyyy-MM-dd"
+                        placeholder="YYYY-MM-DD"
+                    />
+                </VBox>
+            </VBox>
+        </content>
+
+        <beginButton>
+            <Button text="Save" press="onPressCreate"/>
+        </beginButton>
+        <endButton>
+            <Button text="Cancel" press="onPressCancel"/>
+        </endButton>
+    </Dialog>
+</c:FragmentDefinition>
